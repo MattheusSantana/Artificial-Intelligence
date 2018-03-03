@@ -107,9 +107,7 @@ def findSoluction(initialState, soluction, arrayNumbers):
 				childNode.predecessor=node
 				arrayStates.append(childNode)		
 		
-			childNode.predecessor=node
-			arrayStates.append(childNode)		
-
+			
 		if localizationOfZero[1] !=0:
 			childNode = No() 
 			childNode.state =copyState(node.state)
@@ -131,11 +129,11 @@ def findSoluction(initialState, soluction, arrayNumbers):
 #Print all step to the soluction 
 def printSoluction(no):
 	global steps
-	steps = steps + 1
 	if no.predecessor != None:
 		printSoluction(no.predecessor)
 	printMatriz(no.state)	
 		
+	steps = steps + 1
 
 #Just copy state.
 def copyState(matriz):
