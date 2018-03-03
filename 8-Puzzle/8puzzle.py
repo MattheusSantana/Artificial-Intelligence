@@ -78,7 +78,7 @@ def findSoluction(initialState, soluction, arrayNumbers):
 		if node.state == soluction:
 			print("Soluction Found!")
 			printSoluction(node)
-			print("Steps:", counter)
+			print("Attempts:", counter)
 			break
 		
 		localizationOfZero = findZero(node.state)
