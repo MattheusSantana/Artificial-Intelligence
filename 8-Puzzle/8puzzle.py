@@ -3,6 +3,8 @@
 #Programmer: Matheus E. Santana
 #03/March/2018
 
+
+steps = 0 # Will save the number of steps to soluction
 class No(object):
 	"""docstring for No"""
 	def __init__(self):
@@ -12,8 +14,8 @@ class No(object):
 
 class Number():
 	def __init__(self):
-		self.x = 0		#refering to line
-		self.y = 0		#refering to column 
+		self.x = 0			#refering to line
+		self.y = 0			#refering to column 
 		self.value = 0		#number.
 
 def printMatriz(matriz):
@@ -57,10 +59,10 @@ def down(matriz):
 	return matriz
 
 def findSoluction(initialState, soluction, arrayNumbers):
-	arrayStates = []			#Will save the open states
-	arrayStates.append(initialState)	#Add first state.
-	checkeds = []				#Will save the checkeds states
-	counter = 0				#Count the number of steps 
+	arrayStates = []						#Will save the open states
+	arrayStates.append(initialState)		#Add first state.
+	checkeds = []							#will save the checkeds states
+	counter = 0								#Count the number of attempts 
 	
 	while len(arrayStates) != 0:
 		counter+=1
@@ -79,6 +81,7 @@ def findSoluction(initialState, soluction, arrayNumbers):
 			print("Soluction Found!")
 			printSoluction(node)
 			print("Attempts:", counter)
+			print("Steps:", steps)
 			break
 		
 		localizationOfZero = findZero(node.state)
@@ -127,6 +130,8 @@ def findSoluction(initialState, soluction, arrayNumbers):
 		
 #Print all step to the soluction 
 def printSoluction(no):
+	global steps
+	steps = steps + 1
 	if no.predecessor != None:
 		printSoluction(no.predecessor)
 	printMatriz(no.state)	
