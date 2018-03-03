@@ -12,8 +12,8 @@ class No(object):
 
 class Number():
 	def __init__(self):
-		self.x = 0			#refering to line
-		self.y = 0			#refering to column 
+		self.x = 0		#refering to line
+		self.y = 0		#refering to column 
 		self.value = 0		#number.
 
 def printMatriz(matriz):
@@ -57,10 +57,10 @@ def down(matriz):
 	return matriz
 
 def findSoluction(initialState, soluction, arrayNumbers):
-	arrayStates = []						#Will save the open states
-	arrayStates.append(initialState)		#Add first state.
-	checkeds = []							#will save the checkeds states
-	counter = 0								#Count the number of steps 
+	arrayStates = []			#Will save the open states
+	arrayStates.append(initialState)	#Add first state.
+	checkeds = []				#Will save the checkeds states
+	counter = 0				#Count the number of steps 
 	
 	while len(arrayStates) != 0:
 		counter+=1
